@@ -1,9 +1,9 @@
 import React from "react";
 import './Navbar.css'
 import logo from '../../assets/logo.png'
-import search_icon from '../../assets/search-icon.png'
-import profile_icon from '../../assets/profile-icon.png'
-import cart_icon from '../../assets/cart-icon.png'
+import search_icon from '../../assets/search_icon.svg'
+import profile_icon from '../../assets/profile_icon.svg'
+import cart_icon from '../../assets/cart_icon.svg'
 import { Link } from "react-router-dom";
 
 const Navbar=()=>{
@@ -23,13 +23,13 @@ const Navbar=()=>{
             </div>
             <div className="nav-icons-list">
          <div className="nav-icon">
-            <img src={search_icon} alt="" width={20} height={35} />
+            <img src={search_icon} alt=""  />
          </div>
          <div className="nav-icon">
-            <img src={profile_icon} alt="" width={20} height={35} />
+            <img src={profile_icon} alt=""  />
          </div>
          <div className="nav-icon">
-            <img src={cart_icon} alt="" width={20} height={35} />
+            <img src={cart_icon} alt=""  />
          </div>
             </div>
         </div>
