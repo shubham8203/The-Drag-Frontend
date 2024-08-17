@@ -23,12 +23,20 @@
 }
 .navbar .page-items ul {
     list-style:none;
-    color:white;
+   color:#d5d5d5;
     display: flex;
     gap:40px;
 }
 .navbar .page-items ul li{
     cursor:pointer;
+}
+.navbar .page-items ul li :hover{
+    color:rgb(249, 212, 159);
+    transition: color 0 100ms;
+}
+.navbar .page-items ul li a{
+    text-decoration: none;
+    color:inherit;
 }
 .nav-icons-list{
     display: flex;

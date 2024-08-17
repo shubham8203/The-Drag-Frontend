@@ -11,7 +11,7 @@ const CreatorPage = () => {
            <img src={carouselPic} alt="" />
       </div>
       <div className="creator-list">
-        <h2>Our Creators</h2>
+        <h3>Our Creators</h3>
         <div className="creator-list-items">
             {
                 creators.map((item)=>{

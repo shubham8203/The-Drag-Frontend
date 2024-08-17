@@ -15,21 +15,21 @@ const Navbar=()=>{
             </Link>
             <div className="page-items">
                 <ul>
-                    <li><Link to='/creators' reloadDocument style={{textDecoration:'none',color:'#d5d5d5'}}>Creaters</Link></li>
-                    <li><Link to='/communities' reloadDocument style={{textDecoration:'none',color:'#d5d5d5'}}>Communities</Link></li>
-                    <li><Link to='/' reloadDocument style={{textDecoration:'none',color:'#d5d5d5'}} >Brands</Link></li>
-                    <li><Link to='/' reloadDocument style={{textDecoration:'none',color:'#d5d5d5'}}>Promotions</Link></li>
+                    <li><Link to='/creators' reloadDocument >Creaters</Link></li>
+                    <li><Link to='/communities' reloadDocument >Communities</Link></li>
+                    <li><Link to='/brands' reloadDocument  >Brands</Link></li>
+                    <li><Link to='/' reloadDocument >Promotions</Link></li>
                 </ul>
             </div>
             <div className="nav-icons-list">
          <div className="nav-icon">
-            <img src={search_icon} alt=""  />
+           <Link to='#'> <img src={search_icon} alt=""  /></Link> 
          </div>
          <div className="nav-icon">
-            <img src={profile_icon} alt=""  />
+           <Link to='#'><img src={profile_icon} alt=""  /></Link> 
          </div>
          <div className="nav-icon">
-            <img src={cart_icon} alt=""  />
+            <Link to='#'><img src={cart_icon} alt=""  /></Link>
          </div>
             </div>
         </div>

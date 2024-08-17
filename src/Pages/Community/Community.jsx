@@ -9,9 +9,10 @@ const Community = () => {
     <div className='community-container'>
     <div className='community-carousel'>
         <img src={bundeli} alt="" />
+        <button type="button" className='join-btn'>JOIN NOW</button>
     </div>
     <div className="community-list">
-        <h2>Our Communities</h2>
+        <h3>Our Communities</h3>
         <div className="community-list-items">
             {
               communities.map((item)=>{

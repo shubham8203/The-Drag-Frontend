@@ -1,5 +1,5 @@
 .card{
-    width:301px;
+    width:302px;
     height:144px;
   
     color:white;
@@ -20,10 +20,11 @@
 align-items: center;
     
 }
-.gradient h3{
+.gradient>h3{
     width:30%;
     text-align: center;
      font-size:25px;
+     filter: drop-shadow( 8px 4px 6px 0px rgba(0, 0, 0, 0.25));
      
 }
 .gradient p{

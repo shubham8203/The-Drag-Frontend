@@ -37,8 +37,10 @@
     justify-content: center;
    
 }
-.lowerpart img{
+.lowerpart>img{
     cursor:pointer;
+    width:302px;
+    height:144px;
 }
 
 
