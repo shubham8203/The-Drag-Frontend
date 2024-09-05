@@ -12,29 +12,8 @@ const Footer = () => {
              <p>DRAG</p>
              <hr />
         </div>
-        <div className="footer-lower">
-            <div className="list">
-                <ul>
-                    <li>Creators</li>
-                    <li>Brands</li>
-                    <li>Communities</li>
-                    <li>Promotions</li>
-                </ul>
-            </div>
-            <div className="social-media-handles">
-                <img src={facebook_icon} alt="" />
-                <img src={linkedin_icon} alt="" />
-                <img src={instagram_icon} alt="" />
-                <img src={twitter_icon} alt="" />
-            </div>
-            <div className='list'>
-                <ul>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Terms & Conditons</li>
-                    <li>Policies</li>
-                </ul>
-            </div>
+        <div className="query" style={{margin:'20px auto',display:'flex',justifyContent:'center'}}>
+            <p style={{textAlign:'center'}}>For Queries and Contact: bodhbusiness@gmail.com</p>
         </div>
       
     </div>
