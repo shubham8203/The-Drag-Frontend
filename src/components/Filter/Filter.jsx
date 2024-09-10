@@ -95,7 +95,7 @@ const Filter = ({helper,close}) => {
           <label htmlFor="location">
             Location
           </label>
-          <input type="text" name="location" id="location" onInput={(e)=>{
+          <input type="text" name="location" id="location" placeholder='City,State or Country' onInput={(e)=>{
                     debounce(handleLocation,1500,e);
                         console.log(locations)
                     }} />
