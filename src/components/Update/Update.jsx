@@ -1,44 +1,52 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../Register/Register.css'
 import categories from '../../assets/categories'
 import images from '../../assets/images'
 import close_icon from '../../assets/close_icon.svg'
 import dotenv from 'dotenv'
+import Dropdown from '../Dropdown/Dropdown'
 dotenv.config();
 
-const States = [
-    "Andhra Pradesh",
-    "Arunachal Pradesh",
-    "Assam",
-    "Bihar",
-    "Chhattisgarh",
-    "Goa",
-    "Gujarat",
-    "Haryana",
-    "Himachal Pradesh",
-    "Jharkhand",
-    "Karnataka",
-    "Kerala",
-    "Madhya Pradesh",
-    "Maharashtra",
-    "Manipur",
-    "Meghalaya",
-    "Mizoram",
-    "Nagaland",
-    "Odisha",
-    "Punjab",
-    "Rajasthan",
-    "Sikkim",
-    "Tamil Nadu",
-    "Telangana",
-    "Tripura",
-    "Uttar Pradesh",
-    "Uttarakhand",
-    "West Bengal"
-];
+
 var img;
 const Update = ({ close }) => {
     const { linkedin, insta, twitter, youtube, facebook } = images;
+    const [visible,setvisible]=useState(false);
+    const [locations,setlocations]=useState([]);
+
+    const input=(data)=>{
+           
+        document.getElementById('location').value=data;
+        setvisible(false);
+        
+            }
+
+    const handleLocation=(e)=>{
+        console.log(e.target.value);
+            fetch(`https://nominatim.openstreetmap.org/search?q=${e.target.value}&format=json`)
+            .then((res)=>res.json())
+            .then(res=>{
+                
+              let arr= res.map((ele)=>{
+                return ele.display_name;
+               })
+               setlocations(arr);
+             
+               setvisible(true);
+            })
+    }
+    function debounce(handleLocation, delay, e) {
+        let timeoutId;
+      
+          if (timeoutId) {
+          
+            clearTimeout(timeoutId);
+          }
+          timeoutId = setTimeout(() => {
+           handleLocation(e);
+          }, delay);
+        
+      }
 
     const handlesubmit = async (e) => {
 
@@ -101,12 +109,14 @@ const Update = ({ close }) => {
                 </div>
                 <div className="Location">
                     <label htmlFor="location">Location</label>
-                    <select name='location' id='location' >
-                        <option value={''} children={'No change'} />
-                        {
-                            States.map((item) => <option value={item}>{item}</option>)
-                        }
-                    </select>
+                    <input type="text" name="location" id="location" onInput={(e)=>{
+                    debounce(handleLocation,1500,e);
+                        console.log(locations)
+                    }} />
+
+                   {
+                  (visible&&locations.length>0)?<Dropdown locations={locations} input={input}/>:''
+}
                 </div>
                 <div className="contacts">
 

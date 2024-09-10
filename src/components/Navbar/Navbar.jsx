@@ -17,8 +17,27 @@ dotnenv.config();
 const Navbar=()=>{
     const [State,setState]=useState(localStorage.getItem('State'));
     const [creator,setcreator]=useState(localStorage.getItem('creator'));
+    const [location,setlocation]=useState(new Map());
+    
     console.log(State);
 console.log(creator);
+useEffect(()=>{
+    const Fetch=async()=>{
+        var mp=new Map();
+        await fetch('https://countriesnow.space/api/v0.1/countries')
+        .then((res) => res.json())
+        .then((res)=>{
+           
+            res.data.map((ele)=>(
+                mp.set(ele.country,ele.cities)
+            )
+            
+            )
+            setlocation(mp);   
+        })
+    }
+    Fetch();
+},[])
     const fetchdata=(data,st)=>{
  setcreator(data);
  setState(st);
@@ -63,10 +82,10 @@ console.log(creator);
                            
                         )
                     }
-                </Popup>:<Popup trigger={<button type="button" style={{cursor:'pointer',fontFamily:'Jost',borderRadius:'10px', backgroundColor:'white',color:'#1c1826',fontWeight:'700',outline:'none',border:'none',}}>Register as Creator</button>} closeOnDocumentClick={false} modal>
+                </Popup>:<Popup trigger={<button type="button" style={{cursor:'pointer',fontFamily:'Jost',borderRadius:'10px', backgroundColor:'white',color:'#1c1826',fontWeight:'700',outline:'none',border:'none',}}>Register as Creator</button>} closeOnDocumentClick={false} modal nested>
                     {
                         close=>(
-                            <Register close={close}/>
+                            <Register close={close} location={location}/>
                         )
                     }
                 </Popup>:<></>

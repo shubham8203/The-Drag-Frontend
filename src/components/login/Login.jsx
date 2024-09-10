@@ -34,7 +34,7 @@ else{
        
         
         await fetch(`${process.env.REACT_APP_BASE_URL}v1/apis/login`,{
-            credentials:'same-origin',
+                  credentials:'include',
                     method:'POST',
                     
                     headers:{

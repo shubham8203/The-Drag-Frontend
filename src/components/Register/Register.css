@@ -162,13 +162,14 @@
     .Location{
         display:flex;
         gap:20px;
+        position: relative;
         >label{
             font-family: 'Jost';
                 font-size: 20px;
                 font-weight: 400;
                 line-height: 34.68px;
         }
-        >select{
+        >input{
             height:40px;
             width:150px;
         }
@@ -371,6 +372,7 @@ font-size: 2vh;
     .Location{
         display:flex;
         align-items: center;
+        position: relative;
         gap:20px;
         >label{
             font-family: 'Jost';
@@ -378,7 +380,7 @@ font-size: 2vh;
                 font-weight: 400;
                 line-height: 34.68px;
         }
-        >select{
+        >input{
             
             width:60%;
             height:3vh;
@@ -417,7 +419,7 @@ font-size: 2vh;
         width:80vw;
         height:95vh;
         padding:20px 10px;
-        padding-left:7vw;
+        padding-left:3vw;
         position: relative;
         & h3{
             font-family: 'Jost';
@@ -568,6 +570,7 @@ font-size: 2vh;
        display: flex;
        >label{
         font-size:2vh;
+        line-height: 100%;
        }
        
         >input{
@@ -585,6 +588,7 @@ font-size: 2vh;
     .Location{
         display:flex;
         align-items: center;
+        position:relative;
         gap:20px;
         >label{
             font-family: 'Jost';
@@ -592,7 +596,7 @@ font-size: 2vh;
                 font-weight: 400;
                 line-height: 34.68px;
         }
-        >select{
+        >input{
             
             width:60%;
             height:3vh;
